@@ -13,7 +13,7 @@ def concatenate_new_value(input_list, new_value):
 
     """
 
-    pass
+    return input_list + [new_value]
 
 
 def pig_latin(word):
@@ -35,7 +35,11 @@ def pig_latin(word):
     
     """
 
-    pass
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    if word[0] in vowels:
+        return word + 'yay'
+    else:
+        return word[1:] + word[0] + 'ay'
 
 
 def replace_middle(input_list):
@@ -55,7 +59,7 @@ def replace_middle(input_list):
 
     """
 
-    pass
+    input_list[2:-2] = [42, 37]
 
 
 def delete_middle(input_list):
@@ -74,7 +78,7 @@ def delete_middle(input_list):
 
     """
 
-    pass
+    input_list[2:-2] = []
 
 
 def double_with_list_comprehension(input_list):
@@ -89,7 +93,10 @@ def double_with_list_comprehension(input_list):
     
     """
 
-    pass
+    for i in range(len(input_list)):
+        input_list[i] *= 2
+    
+    return input_list
 
 
 def multiplication_table(n):
@@ -102,5 +109,9 @@ def multiplication_table(n):
     [[1, 2, 3], [2, 4, 6], [3, 6, 9]]
     
     """
-
-    pass
+    result = []
+    for i in range(1,n + 1):
+        result.append([])
+        for j in range(1,n + 1):
+            result[i - 1].append(i * j)
+    return result
